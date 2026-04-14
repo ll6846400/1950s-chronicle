@@ -1,218 +1,2400 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>The 1950s Chronicle</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VELVET ERA — The Magazine of Timeless Living</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F4EDD3;
+    --parchment: #EAD9A8;
+    --aged: #D4BC7A;
+    --burgundy: #7A1E2E;
+    --wine: #5C1520;
+    --gold: #B8860B;
+    --gold-light: #D4A017;
+    --ink: #1C120A;
+    --brown: #3E2108;
+    --sepia: #6B4226;
+    --muted: #8C7354;
+    --divider: #C4A45A;
+    --paper: #F8F1DC;
+    --accent: #C1440E;
+  }
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      background: #f7f1e3;
-      color: #1f1f1f;
-    }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* NAV */
-    nav {
-      text-align: center;
-      padding: 18px;
-      background: rgba(255,255,255,0.85);
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #ddd;
-      z-index: 10;
-    }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.7;
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(180,140,60,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(122,30,46,0.04) 0%, transparent 60%);
+    min-height: 100vh;
+  }
 
-    nav a {
-      margin: 0 12px;
-      text-decoration: none;
-      color: #1f1f1f;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+  /* ── TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.5;
+  }
 
-    /* HERO FULL SCREEN COVER */
-    .hero {
-      height: 100vh;
-      width: 100%;
-      background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80");
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+  /* ── TOP BANNER ── */
+  .top-banner {
+    background: var(--wine);
+    color: var(--parchment);
+    text-align: center;
+    padding: 6px 20px;
+    font-family: 'Special Elite', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
 
-    /* LUXURY OVERLAY */
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        rgba(20, 15, 10, 0.65),
-        rgba(90, 70, 40, 0.55)
-      );
-    }
+  /* ── HEADER ── */
+  header {
+    background: var(--paper);
+    border-bottom: 3px double var(--divider);
+    padding: 0 40px;
+  }
 
-    /* HERO TEXT */
-    .hero-content {
-      position: relative;
-      color: white;
-      max-width: 800px;
-      padding: 20px;
-      text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
-    }
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0 10px;
+    border-bottom: 1px solid var(--aged);
+  }
 
-    .hero-content h1 {
-      font-size: 78px;
-      margin: 0;
-      letter-spacing: 5px;
-    }
+  .header-date {
+    font-family: 'Special Elite', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+  }
 
-    .hero-content p {
-      font-size: 18px;
-      color: #f5e6c8;
-      margin-top: 10px;
-    }
+  .masthead {
+    text-align: center;
+    flex: 1;
+    padding: 12px 40px 6px;
+  }
 
-    /* CONTENT */
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
-    }
+  .masthead-pre {
+    font-family: 'Special Elite', monospace;
+    font-size: 9px;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
 
-    .section-title {
-      text-align: center;
-      font-size: 30px;
-      letter-spacing: 3px;
-      margin-bottom: 40px;
-    }
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 82px);
+    font-weight: 900;
+    color: var(--wine);
+    letter-spacing: -1px;
+    line-height: 1;
+    text-shadow: 2px 2px 0 rgba(180,100,0,0.15);
+  }
 
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
+  .masthead-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--sepia);
+    letter-spacing: 3px;
+    display: block;
+    margin-top: 6px;
+  }
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-left: 5px solid #c9a66b;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      transition: 0.3s;
-    }
+  .header-issue {
+    font-family: 'Special Elite', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-align: right;
+  }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+  /* ── ORNAMENT LINE ── */
+  .ornament {
+    text-align: center;
+    color: var(--gold);
+    font-size: 18px;
+    letter-spacing: 8px;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .ornament::before, .ornament::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--divider), transparent);
+  }
 
-    /* FEATURED */
-    .featured {
-      background: white;
-      padding: 30px;
-      margin-top: 40px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      border-left: 6px solid #c9a66b;
-    }
+  /* ── NAVIGATION ── */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 0;
+    background: var(--wine);
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+  }
 
-    footer {
-      text-align: center;
-      padding: 40px;
-      background: #f1e6d0;
-      margin-top: 60px;
-      font-size: 14px;
-    }
+  nav a {
+    font-family: 'Special Elite', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--parchment);
+    text-decoration: none;
+    padding: 12px 22px;
+    transition: all 0.25s;
+    border-right: 1px solid rgba(196,164,90,0.3);
+    position: relative;
+  }
+  nav a:last-child { border-right: none; }
+  nav a:hover {
+    background: rgba(196,164,90,0.2);
+    color: var(--gold-light);
+  }
+  nav a.active {
+    background: var(--gold);
+    color: var(--wine);
+  }
 
-  </style>
+  /* ── SEARCH BAR ── */
+  .search-bar {
+    background: var(--parchment);
+    border-bottom: 1px solid var(--aged);
+    padding: 8px 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+  .search-bar input {
+    font-family: 'IM Fell English', serif;
+    font-size: 13px;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid var(--aged);
+    padding: 5px 14px;
+    color: var(--ink);
+    width: 220px;
+    border-radius: 0;
+    outline: none;
+  }
+  .search-bar input:focus { border-color: var(--burgundy); }
+  .search-bar button {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    background: var(--burgundy);
+    color: var(--cream);
+    border: none;
+    padding: 6px 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  .search-bar button:hover { background: var(--wine); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 40px 0 30px;
+    border-bottom: 3px double var(--divider);
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .hero-feature {
+    position: relative;
+  }
+
+  .hero-label {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+    padding-left: 2px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 400px;
+    background: var(--brown);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .hero-image-art {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 40%, #5C3015 0%, #1C0A04 100%);
+    position: relative;
+  }
+
+  .hero-image-art::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 2px,
+      rgba(255,220,150,0.03) 2px, rgba(255,220,150,0.03) 4px
+    );
+  }
+
+  .hero-image-art svg {
+    width: 200px;
+    height: 280px;
+    opacity: 0.6;
+  }
+
+  .hero-image-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(28,10,4,0.85));
+    padding: 30px 20px 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(244,237,211,0.8);
+    letter-spacing: 1px;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3.5vw, 44px);
+    font-weight: 700;
+    color: var(--wine);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--burgundy);
+  }
+
+  .hero-excerpt {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: var(--brown);
+    line-height: 1.8;
+    margin-bottom: 18px;
+    font-weight: 300;
+  }
+
+  .read-more {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--burgundy);
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+  .read-more:hover { color: var(--wine); border-color: var(--wine); }
+
+  /* ── SIDEBAR HERO ── */
+  .hero-sidebar {
+    border-left: 1px solid var(--aged);
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sidebar-card {
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--aged);
+  }
+  .sidebar-card:last-child { border-bottom: none; }
+
+  .sidebar-card .cat-tag {
+    font-family: 'Special Elite', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .sidebar-card-img {
+    width: 100%;
+    height: 130px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .sidebar-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--wine);
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .sidebar-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--sepia);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    text-align: center;
+    padding: 36px 0 26px;
+    position: relative;
+  }
+
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 700;
+    color: var(--wine);
+    letter-spacing: 1px;
+  }
+
+  .section-header .section-label {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .section-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 12px;
+    color: var(--divider);
+    font-size: 16px;
+  }
+  .section-rule::before, .section-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--divider);
+  }
+
+  /* ── NEWS STRIP ── */
+  .news-strip {
+    background: var(--burgundy);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+  }
+
+  .news-strip-label {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-right: 1px solid rgba(196,164,90,0.4);
+    padding-right: 20px;
+  }
+
+  .news-strip-items {
+    display: flex;
+    gap: 30px;
+    overflow: hidden;
+    animation: ticker 30s linear infinite;
+    white-space: nowrap;
+  }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .news-strip-item {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--cream);
+    font-style: italic;
+    white-space: nowrap;
+  }
+  .news-strip-item::after {
+    content: ' ✦ ';
+    color: var(--gold);
+    margin-left: 14px;
+  }
+
+  /* ── MAIN + ASIDE LAYOUT ── */
+  .main-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 50px;
+    padding: 30px 0 50px;
+  }
+
+  /* ── ARTICLE GRID ── */
+  .article-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  .article-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  /* ── ARTICLE CARD ── */
+  .article-card {
+    border-bottom: 1px solid var(--aged);
+    padding-bottom: 22px;
+    transition: opacity 0.2s;
+  }
+  .article-card:hover { opacity: 0.85; }
+
+  .article-card .article-img {
+    width: 100%;
+    height: 160px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .article-card .cat-tag {
+    font-family: 'Special Elite', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .article-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--wine);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .article-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--sepia);
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+
+  .article-meta {
+    font-family: 'Special Elite', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* ── FEATURED ARTICLE (WIDE) ── */
+  .featured-wide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    background: var(--paper);
+    border: 1px solid var(--aged);
+    padding: 26px;
+    margin-bottom: 36px;
+    position: relative;
+  }
+
+  .featured-wide::before {
+    content: 'FEATURED';
+    position: absolute;
+    top: -1px;
+    left: 20px;
+    font-family: 'Special Elite', monospace;
+    font-size: 9px;
+    letter-spacing: 4px;
+    background: var(--wine);
+    color: var(--cream);
+    padding: 3px 12px;
+  }
+
+  .featured-wide .featured-img {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+  }
+
+  .featured-wide h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--wine);
+    line-height: 1.3;
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+
+  .featured-wide p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--brown);
+    line-height: 1.85;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  /* ── QUOTE PULL ── */
+  .pull-quote {
+    border-left: 4px solid var(--gold);
+    padding: 12px 20px;
+    margin: 24px 0;
+    background: rgba(196,164,90,0.06);
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--sepia);
+    line-height: 1.5;
+  }
+
+  .pull-quote cite {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-top: 8px;
+  }
+
+  /* ── ASTROLOGY SECTION ── */
+  .astrology-section {
+    background: var(--wine);
+    padding: 50px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .astrology-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(180,134,11,0.15) 0%, transparent 70%);
+  }
+
+  .astrology-section .section-header h2 {
+    color: var(--parchment);
+  }
+  .astrology-section .section-label {
+    color: var(--gold-light) !important;
+  }
+  .astrology-section .section-rule {
+    color: rgba(196,164,90,0.5);
+  }
+  .astrology-section .section-rule::before,
+  .astrology-section .section-rule::after {
+    background: rgba(196,164,90,0.4);
+  }
+
+  .zodiac-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  .zodiac-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(196,164,90,0.25);
+    padding: 18px 12px 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .zodiac-card:hover {
+    background: rgba(196,164,90,0.12);
+    border-color: rgba(196,164,90,0.6);
+    transform: translateY(-2px);
+  }
+
+  .zodiac-symbol {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 6px;
+    color: var(--gold-light);
+  }
+
+  .zodiac-name {
+    font-family: 'Special Elite', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(244,237,211,0.9);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .zodiac-dates {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 11px;
+    color: rgba(196,164,90,0.8);
+  }
+
+  /* ── HOROSCOPE PREVIEW ── */
+  .horoscope-preview {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(196,164,90,0.3);
+    padding: 28px;
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 26px;
+    align-items: center;
+  }
+
+  .horoscope-big-sign {
+    text-align: center;
+  }
+
+  .horoscope-big-sign .big-symbol {
+    font-size: 52px;
+    display: block;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .horoscope-big-sign span {
+    font-family: 'Special Elite', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(196,164,90,0.8);
+    text-transform: uppercase;
+  }
+
+  .horoscope-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--parchment);
+    margin-bottom: 10px;
+  }
+
+  .horoscope-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: rgba(244,237,211,0.75);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── SPIRITUAL SECTION ── */
+  .spiritual-section {
+    background: var(--paper);
+    border-top: 3px double var(--divider);
+    border-bottom: 3px double var(--divider);
+    padding: 50px 40px;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .sidebar-widget {
+    border: 1px solid var(--aged);
+    padding: 20px;
+    background: var(--paper);
+  }
+
+  .widget-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--wine);
+    border-bottom: 1px solid var(--aged);
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ── TAROT WIDGET ── */
+  .tarot-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .tarot-card {
+    aspect-ratio: 2/3;
+    border: 1px solid var(--aged);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    font-size: 24px;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .tarot-card:hover { transform: translateY(-4px); }
+
+  .tarot-card .card-back {
+    position: absolute;
+    inset: 0;
+    background: var(--wine);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: rgba(196,164,90,0.5);
+    transition: opacity 0.4s;
+  }
+
+  .tarot-card.revealed .card-back { opacity: 0; }
+
+  .tarot-card-name {
+    font-family: 'Special Elite', monospace;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 4px;
+    padding: 0 4px;
+  }
+
+  .tarot-btn {
+    width: 100%;
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--wine);
+    color: var(--cream);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .tarot-btn:hover { background: var(--burgundy); }
+
+  /* ── MOON PHASE WIDGET ── */
+  .moon-display {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .moon-symbol {
+    font-size: 60px;
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .moon-name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--wine);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .moon-date {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .moon-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--sepia);
+    font-style: italic;
+    line-height: 1.6;
+    margin-top: 10px;
+    font-weight: 300;
+  }
+
+  /* ── NEWSLETTER ── */
+  .newsletter {
+    background: var(--brown);
+    padding: 50px 40px;
+    text-align: center;
+    position: relative;
+  }
+
+  .newsletter::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 40px,
+      rgba(196,164,90,0.03) 40px, rgba(196,164,90,0.03) 80px
+    );
+  }
+
+  .newsletter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--parchment);
+    margin-bottom: 10px;
+  }
+
+  .newsletter p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: rgba(244,237,211,0.7);
+    font-weight: 300;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0;
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    font-family: 'IM Fell English', serif;
+    font-size: 14px;
+    background: rgba(244,237,211,0.1);
+    border: 1px solid rgba(196,164,90,0.4);
+    border-right: none;
+    padding: 12px 20px;
+    color: var(--parchment);
+    outline: none;
+  }
+  .newsletter-form input::placeholder { color: rgba(196,164,90,0.5); }
+  .newsletter-form input:focus { border-color: var(--gold-light); }
+
+  .newsletter-form button {
+    font-family: 'Special Elite', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    background: var(--gold);
+    color: var(--brown);
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+  .newsletter-form button:hover { background: var(--gold-light); }
+
+  /* ── LIFESTYLE GRID ── */
+  .lifestyle-cards {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-bottom: 36px;
+  }
+
+  /* ── ARTICLE IMAGE PLACEHOLDERS ── */
+  .img-ph {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-ph-1 {
+    background: linear-gradient(135deg, #2E1206 0%, #5C3015 50%, #3E1D0A 100%);
+  }
+  .img-ph-2 {
+    background: linear-gradient(135deg, #1A2A1A 0%, #2E4A2E 50%, #1A3020 100%);
+  }
+  .img-ph-3 {
+    background: linear-gradient(135deg, #1A1A2E 0%, #2E2A4A 50%, #1A1A35 100%);
+  }
+  .img-ph-4 {
+    background: linear-gradient(135deg, #2E2010 0%, #4A3520 50%, #2E2510 100%);
+  }
+  .img-ph-5 {
+    background: linear-gradient(135deg, #2E0A0A 0%, #4A1515 50%, #3A0A0A 100%);
+  }
+  .img-ph-6 {
+    background: linear-gradient(135deg, #0A1A2E 0%, #152840 50%, #0A1520 100%);
+  }
+  .img-ph-7 {
+    background: linear-gradient(135deg, #1A0A2E 0%, #2E1548 50%, #1A0A3A 100%);
+  }
+  .img-ph-8 {
+    background: linear-gradient(135deg, #2E2A10 0%, #4A4010 50%, #2E2A05 100%);
+  }
+  .img-ph-9 {
+    background: linear-gradient(135deg, #0A2E1A 0%, #104A28 50%, #0A2E15 100%);
+  }
+
+  .img-ph::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 3px,
+      rgba(255,220,150,0.03) 3px, rgba(255,220,150,0.03) 6px
+    );
+  }
+
+  .img-ph-label {
+    position: relative;
+    z-index: 1;
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: rgba(196,164,90,0.5);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 20px;
+    line-height: 1.5;
+  }
+
+  /* ── SPIRITUAL CARDS ── */
+  .spiritual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--aged);
+  }
+
+  .spiritual-card {
+    padding: 28px 24px;
+    border-right: 1px solid var(--aged);
+    position: relative;
+  }
+  .spiritual-card:last-child { border-right: none; }
+
+  .spiritual-icon {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 14px;
+    color: var(--gold);
+  }
+
+  .spiritual-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--wine);
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  .spiritual-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--sepia);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── POPULAR SIDEBAR ── */
+  .popular-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .popular-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--aged);
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .popular-item:last-child { border-bottom: none; }
+  .popular-item:hover { opacity: 0.75; }
+
+  .popular-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--aged);
+    line-height: 1;
+    min-width: 28px;
+  }
+
+  .popular-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--wine);
+    line-height: 1.4;
+  }
+
+  /* ── EVENTS WIDGET ── */
+  .event-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--aged);
+  }
+  .event-item:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .event-date {
+    text-align: center;
+    min-width: 44px;
+    background: var(--wine);
+    padding: 6px;
+    color: var(--cream);
+  }
+
+  .event-day {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+  }
+
+  .event-month {
+    font-family: 'Special Elite', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+
+  .event-info h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--wine);
+    margin-bottom: 3px;
+  }
+
+  .event-info p {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 50px 40px 30px;
+    border-top: 3px solid var(--gold);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .footer-brand p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(244,237,211,0.55);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .social-btn {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: rgba(196,164,90,0.7);
+    text-decoration: none;
+    border: 1px solid rgba(196,164,90,0.3);
+    padding: 5px 10px;
+    transition: all 0.2s;
+  }
+  .social-btn:hover {
+    border-color: var(--gold-light);
+    color: var(--gold-light);
+  }
+
+  .footer-col h3 {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(196,164,90,0.3);
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col li {
+    margin-bottom: 8px;
+  }
+
+  .footer-col a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: rgba(244,237,211,0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 300;
+  }
+  .footer-col a:hover { color: var(--cream); }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(196,164,90,0.2);
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .footer-bottom p {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: rgba(196,164,90,0.4);
+  }
+
+  /* ── CATEGORY TAGS ── */
+  .tag {
+    display: inline-block;
+    font-family: 'Special Elite', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border: 1px solid var(--aged);
+    color: var(--muted);
+    text-decoration: none;
+    margin: 3px;
+    transition: all 0.2s;
+  }
+  .tag:hover { border-color: var(--burgundy); color: var(--burgundy); }
+
+  /* ── HOVER EFFECTS ── */
+  a { cursor: pointer; }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    padding: 10px 40px;
+    background: rgba(196,164,90,0.06);
+    border-bottom: 1px solid var(--aged);
+  }
+  .breadcrumb span { color: var(--gold); }
+
+  /* ── LIFESTYLE ARTICLE LARGE ── */
+  .lifestyle-large {
+    position: relative;
+  }
+
+  .lifestyle-large .lifestyle-img {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+  }
+
+  .lifestyle-large h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--wine);
+    margin: 14px 0 10px;
+    font-style: italic;
+  }
+
+  .lifestyle-large p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: var(--sepia);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .lifestyle-small {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .lifestyle-mini {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--aged);
+  }
+  .lifestyle-mini:last-child { border-bottom: none; }
+
+  .lifestyle-mini-img {
+    width: 90px;
+    height: 70px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .lifestyle-mini h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--wine);
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+
+  .lifestyle-mini p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--sepia);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* ── SECTION BG ALTERNATION ── */
+  .bg-alt { background: var(--parchment); }
+
+  /* ── AD PLACEHOLDERS ── */
+  .ad-space {
+    border: 1px dashed var(--aged);
+    padding: 20px;
+    text-align: center;
+    background: rgba(196,164,90,0.04);
+    margin-bottom: 24px;
+  }
+
+  .ad-space span {
+    font-family: 'Special Elite', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--aged);
+    text-transform: uppercase;
+  }
+
+  /* ── STORY SECTION ── */
+  .story-strip {
+    background: var(--cream);
+    border-top: 3px double var(--divider);
+    border-bottom: 3px double var(--divider);
+    padding: 50px 40px;
+  }
+
+  .story-featured {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 36px;
+  }
+
+  .story-featured .story-img {
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+  }
+
+  .story-text .drop-cap::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 68px;
+    font-weight: 900;
+    float: left;
+    line-height: 0.75;
+    margin: 6px 8px 0 0;
+    color: var(--wine);
+  }
+
+  .story-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--wine);
+    margin-bottom: 14px;
+    line-height: 1.25;
+  }
+
+  .story-text p {
+    font-family: 'IM Fell English', serif;
+    font-size: 15px;
+    color: var(--brown);
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(28,10,4,0.85);
+    z-index: 500;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: var(--paper);
+    border: 2px solid var(--gold);
+    max-width: 500px;
+    width: 90%;
+    padding: 36px;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-family: 'Special Elite', monospace;
+    font-size: 18px;
+    color: var(--muted);
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+  }
+  .modal-close:hover { color: var(--wine); }
+
+  .modal-sign {
+    font-size: 50px;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .modal h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--wine);
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .modal .modal-dates {
+    font-family: 'Special Elite', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-align: center;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .horoscope-body p {
+    font-family: 'IM Fell English', serif;
+    font-size: 15px;
+    color: var(--brown);
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  .horoscope-lucky {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+    border-top: 1px solid var(--aged);
+    padding-top: 16px;
+  }
+
+  .lucky-item {
+    text-align: center;
+  }
+  .lucky-label {
+    font-family: 'Special Elite', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .lucky-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--wine);
+    font-style: italic;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-sidebar { border-left: none; border-top: 1px solid var(--aged); padding: 24px 0 0; }
+    .main-layout { grid-template-columns: 1fr; }
+    .zodiac-grid { grid-template-columns: repeat(4, 1fr); }
+    .article-grid-3, .article-grid-2 { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .story-featured { grid-template-columns: 1fr; }
+    .lifestyle-cards { grid-template-columns: 1fr; }
+    .spiritual-grid { grid-template-columns: 1fr; }
+    .spiritual-card { border-right: none; border-bottom: 1px solid var(--aged); }
+    header { padding: 0 20px; }
+    .container { padding: 0 20px; }
+  }
+</style>
 </head>
-
 <body>
 
-<!-- NAV -->
+<!-- TOP BANNER -->
+<div class="top-banner">✦ Est. 1947 — The Magazine of Timeless Living — Astrology · Spirituality · Stories · Style ✦</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-top">
+    <div class="header-date">
+      <div>Tuesday</div>
+      <div>April 14, 1957</div>
+    </div>
+    <div class="masthead">
+      <span class="masthead-pre">✦ ✦ ✦</span>
+      <h1>VELVET ERA</h1>
+      <span class="masthead-sub">The Magazine of Timeless Living</span>
+    </div>
+    <div class="header-issue">
+      <div>Volume XII</div>
+      <div>Issue No. 4</div>
+    </div>
+  </div>
+
+  <div class="ornament">⬥ ◈ ⬥</div>
+</header>
+
+<!-- NAVIGATION -->
 <nav>
-  <a href="#">HOME</a>
-  <a href="#">STORIES</a>
-  <a href="#">LIFESTYLE</a>
-  <a href="#">ASTROLOGY</a>
-  <a href="#">SPIRITUAL</a>
-  <a href="#">NEWS</a>
+  <a href="#" class="active">Home</a>
+  <a href="#stories">Stories</a>
+  <a href="#news">News & Society</a>
+  <a href="#astrology">Astrology</a>
+  <a href="#spiritual">Spiritual</a>
+  <a href="#lifestyle">Life & Style</a>
+  <a href="#culture">Culture</a>
+  <a href="#shop">Boutique</a>
+  <a href="#about">About</a>
 </nav>
 
-<!-- HERO COVER -->
-<div class="hero">
-  <div class="overlay"></div>
+<!-- SEARCH BAR -->
+<div class="search-bar">
+  <input type="text" placeholder="Search the archives…" id="searchInput">
+  <button onclick="handleSearch()">Search</button>
+</div>
 
-  <div class="hero-content">
-    <h1>The 1950s Chronicle</h1>
-    <p>Luxury Vintage Magazine • Stories • Lifestyle • Culture • Astrology</p>
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  Home <span>›</span> Today's Edition <span>›</span> Spring Issue
+</div>
 
-    <div style="margin-top:20px;font-size:16px;color:#f5e6c8;">
-      ✨ A timeless journey through elegance, storytelling, and vintage culture
-    </div>
+<!-- NEWS TICKER -->
+<div class="news-strip">
+  <div class="news-strip-label">Latest</div>
+  <div class="news-strip-items" id="ticker">
+    <span class="news-strip-item">Spring Equinox Brings Powerful Aries Stellium</span>
+    <span class="news-strip-item">Ancient Crystal Healing Traditions Revived in Paris</span>
+    <span class="news-strip-item">The Return of High Tea: Society's Most Beloved Ritual</span>
+    <span class="news-strip-item">Venus in Taurus: What It Means for Your Love Life</span>
+    <span class="news-strip-item">New Moon in Pisces — A Night for Intention Setting</span>
+    <span class="news-strip-item">The Lost Art of Letter Writing Makes Its Grand Return</span>
+    <span class="news-strip-item">Spring Equinox Brings Powerful Aries Stellium</span>
+    <span class="news-strip-item">Ancient Crystal Healing Traditions Revived in Paris</span>
+    <span class="news-strip-item">The Return of High Tea: Society's Most Beloved Ritual</span>
+    <span class="news-strip-item">Venus in Taurus: What It Means for Your Love Life</span>
+    <span class="news-strip-item">New Moon in Pisces — A Night for Intention Setting</span>
+    <span class="news-strip-item">The Lost Art of Letter Writing Makes Its Grand Return</span>
   </div>
 </div>
 
-<!-- INTRO -->
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-inner">
+      <!-- MAIN FEATURE -->
+      <div class="hero-feature">
+        <span class="hero-label">✦ Cover Story — Spring Edition</span>
+        <div class="hero-image">
+          <div class="hero-image-art">
+            <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="100" cy="100" rx="55" ry="70" fill="rgba(196,160,80,0.2)" stroke="rgba(196,160,80,0.4)" stroke-width="1"/>
+              <circle cx="100" cy="80" r="35" fill="rgba(196,160,80,0.15)" stroke="rgba(196,160,80,0.35)" stroke-width="0.8"/>
+              <ellipse cx="100" cy="160" rx="40" ry="60" fill="rgba(196,160,80,0.1)" stroke="rgba(196,160,80,0.3)" stroke-width="0.8"/>
+              <line x1="30" y1="140" x2="170" y2="140" stroke="rgba(196,160,80,0.25)" stroke-width="0.5"/>
+              <line x1="100" y1="30" x2="100" y2="250" stroke="rgba(196,160,80,0.25)" stroke-width="0.5"/>
+              <circle cx="100" cy="140" r="8" fill="rgba(196,160,80,0.5)"/>
+              <text x="100" y="230" text-anchor="middle" font-size="10" fill="rgba(196,160,80,0.4)" font-family="serif" letter-spacing="2">VELVET ERA</text>
+            </svg>
+          </div>
+          <div class="hero-image-caption">Illustration by Elspeth Moreau, Staff Artist</div>
+        </div>
+        <h1 class="hero-title">The <em>Eternal Feminine</em>:<br>How Women Shaped the Mystical World</h1>
+        <p class="hero-excerpt">From the oracles of ancient Delphi to the drawing-room seers of Victorian London, women have always stood at the crossroads of the spiritual and the earthly — keepers of a knowledge that transcends the rational mind, guardians of a wisdom older than civilization itself.</p>
+        <a href="#" class="read-more">Continue Reading</a>
+      </div>
+
+      <!-- SIDEBAR STORIES -->
+      <div class="hero-sidebar">
+        <div class="sidebar-card">
+          <span class="cat-tag">✦ Astrology</span>
+          <div class="sidebar-card-img">
+            <div class="img-ph img-ph-3" style="height:130px">
+              <div class="img-ph-label">Stars & Planets</div>
+            </div>
+          </div>
+          <h3>Saturn's Return: Navigating Life's Great Turning Points</h3>
+          <p>Every twenty-nine years, Saturn completes its orbit and returns to the position it held at your birth…</p>
+          <br><a href="#" class="read-more">Read More</a>
+        </div>
+
+        <div class="sidebar-card">
+          <span class="cat-tag">✦ Spiritual</span>
+          <div class="sidebar-card-img">
+            <div class="img-ph img-ph-7" style="height:130px">
+              <div class="img-ph-label">Sacred Spaces</div>
+            </div>
+          </div>
+          <h3>The Hidden Temples of Kyoto: A Pilgrim's Diary</h3>
+          <p>Beyond the tourist paths, seven sacred gardens await those willing to wander in silence…</p>
+          <br><a href="#" class="read-more">Read More</a>
+        </div>
+
+        <div class="sidebar-card">
+          <span class="cat-tag">✦ Life & Style</span>
+          <h3>A Season of Quiet Luxury: The New Language of Elegance</h3>
+          <p>After decades of excess, the most refined women are returning to simplicity — and finding it revolutionary.</p>
+          <br><a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN + SIDEBAR LAYOUT -->
 <div class="container">
+  <div class="main-layout">
+    <main>
 
-  <h2 class="section-title">EDITOR’S INTRODUCTION</h2>
+      <!-- NEWS & SOCIETY SECTION -->
+      <section id="news">
+        <div class="section-header">
+          <span class="section-label">✦ Section Two</span>
+          <h2>News &amp; Society</h2>
+          <div class="section-rule">⬥</div>
+        </div>
 
-  <p style="text-align:center;line-height:1.8;max-width:800px;margin:auto;">
-    The 1950s Chronicle is a luxury retro-inspired digital magazine featuring vintage lifestyle,
-    storytelling, culture, astrology, and spiritual reflections. It brings timeless elegance into a modern website experience.
-  </p>
+        <div class="article-grid-3">
+          <div class="article-card">
+            <div class="article-img">
+              <div class="img-ph img-ph-1" style="height:160px">
+                <div class="img-ph-label">Society Column</div>
+              </div>
+            </div>
+            <span class="cat-tag">✦ Society</span>
+            <h3>The Grand Ball Returns to Paris After Ten Long Years</h3>
+            <p>The gilded rooms of the Hôtel de Crillon threw open their doors for the first time since the war, welcoming society's most luminous figures…</p>
+            <div class="article-meta">By Vivienne Chantal · Apr 12</div>
+          </div>
 
-  <!-- FEATURED -->
-  <div class="featured">
-    <h2>FEATURED STORY</h2>
-    <h3>The Golden Era of Simplicity</h3>
-    <p>
-      Explore a world where life moved slower, emotions were deeper, and simplicity defined beauty.
-    </p>
+          <div class="article-card">
+            <div class="article-img">
+              <div class="img-ph img-ph-2" style="height:160px">
+                <div class="img-ph-label">World Affairs</div>
+              </div>
+            </div>
+            <span class="cat-tag">✦ World</span>
+            <h3>The New Salons: Where Ideas Still Rule the Evening</h3>
+            <p>In a world of television and telegrams, a quiet revolution is occurring in the drawing rooms of Europe's intelligentsia…</p>
+            <div class="article-meta">By Edmund Hargreaves · Apr 11</div>
+          </div>
+
+          <div class="article-card">
+            <div class="article-img">
+              <div class="img-ph img-ph-4" style="height:160px">
+                <div class="img-ph-label">Arts & Letters</div>
+              </div>
+            </div>
+            <span class="cat-tag">✦ Arts</span>
+            <h3>The Forgotten Poetess of Montmartre Rediscovered at Last</h3>
+            <p>A trunkful of manuscripts found beneath a Paris bookshop has reintroduced the world to Céleste Auberon's remarkable verse…</p>
+            <div class="article-meta">By Marguerite Floret · Apr 10</div>
+          </div>
+        </div>
+
+        <!-- PULL QUOTE -->
+        <div class="pull-quote">
+          <p>"The woman who reads the stars does not fear the dark — she has learned to navigate by it."</p>
+          <cite>— Velvet Era, Vol. XII</cite>
+        </div>
+      </section>
+
+      <!-- STORIES SECTION -->
+      <section id="stories" class="story-strip" style="margin: 0 -40px; padding: 50px 40px;">
+        <div class="section-header" style="padding-top:0">
+          <span class="section-label">✦ Section Three</span>
+          <h2>Tales &amp; Stories</h2>
+          <div class="section-rule">⬥</div>
+        </div>
+
+        <!-- FEATURED STORY -->
+        <div class="story-featured">
+          <div class="story-img">
+            <div class="img-ph img-ph-5" style="height:360px">
+              <div class="img-ph-label">Fiction Illustration</div>
+            </div>
+          </div>
+          <div class="story-text">
+            <span class="cat-tag" style="display:block;margin-bottom:10px">✦ Short Fiction</span>
+            <h2>The Perfumer's Daughter and the Ghost of Rue de Rivoli</h2>
+            <p class="drop-cap">She had inherited her mother's nose — that impossible gift for distinguishing one memory from another simply by its scent. Orange blossom for joy, vetiver for loss, the particular sharpness of first snow for something she had no name for yet.</p>
+            <p>That morning, Madeleine stood in the doorway of the shop where three generations of her family had crafted their peculiar magic, staring at the figure who appeared to be browsing the amber vials along the western wall — and who cast no shadow on the floor.</p>
+            <p>She was not afraid. Her grandmother had told her this might happen. "The old ones come back," she'd said, "when they have left something unfinished." Madeleine straightened her apron and approached…</p>
+            <br>
+            <a href="#" class="read-more">Continue the Story</a>
+          </div>
+        </div>
+
+        <!-- STORY GRID -->
+        <div class="article-grid-2">
+          <div class="article-card">
+            <div class="article-img">
+              <div class="img-ph img-ph-6" style="height:160px">
+                <div class="img-ph-label">Mystery Fiction</div>
+              </div>
+            </div>
+            <span class="cat-tag">✦ Mystery</span>
+            <h3>The Clockmaker's Confession: A Story in Seven Parts</h3>
+            <p>Part Four: The silver pocket watch that Hector Vane had repaired three times refused, on this particular October morning, to be repaired a fourth…</p>
+            <div class="article-meta">By Rosalind Crest · Serialised Weekly</div>
+          </div>
+
+          <div class="article-card">
+            <div class="article-img">
+              <div class="img-ph img-ph-9" style="height:160px">
+                <div class="img-ph-label">Travel Fiction</div>
+              </div>
+            </div>
+            <span class="cat-tag">✦ Travel</span>
+            <h3>A Letter Never Sent: Found in the Hotel Splendide, Geneva</h3>
+            <p>My darling — I have been sitting in this chair for three hours attempting to describe the lake at evening and finding that all my words dissolve like…</p>
+            <div class="article-meta">Anonymous · April 1947</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LIFESTYLE SECTION -->
+      <section id="lifestyle" style="padding: 10px 0 0;">
+        <div class="section-header">
+          <span class="section-label">✦ Section Five</span>
+          <h2>Life &amp; Style</h2>
+          <div class="section-rule">⬥</div>
+        </div>
+
+        <div class="lifestyle-cards">
+          <div class="lifestyle-large">
+            <div class="lifestyle-img">
+              <div class="img-ph img-ph-8" style="height:320px">
+                <div class="img-ph-label">Style & Fashion</div>
+              </div>
+            </div>
+            <span class="cat-tag" style="display:block;margin-top:14px">✦ Fashion</span>
+            <h2>The New Season Wardrobe: Twelve Pieces That Will Last a Lifetime</h2>
+            <p>The well-dressed woman of 1957 asks not "what is fashionable?" but "what is true?" She builds her wardrobe as an architect builds a house — with permanence, proportion, and beauty at its foundation…</p>
+            <br><a href="#" class="read-more">Read the Fashion Report</a>
+          </div>
+
+          <div class="lifestyle-small">
+            <div class="lifestyle-mini">
+              <div class="lifestyle-mini-img">
+                <div class="img-ph img-ph-1" style="height:70px">
+                  <div class="img-ph-label" style="font-size:8px">Home</div>
+                </div>
+              </div>
+              <div>
+                <span class="cat-tag">✦ Home</span>
+                <h4>The Art of the Perfectly Set Table</h4>
+                <p>Crystal, linen, and the quiet pleasure of candlelight…</p>
+              </div>
+            </div>
+
+            <div class="lifestyle-mini">
+              <div class="lifestyle-mini-img">
+                <div class="img-ph img-ph-2" style="height:70px">
+                  <div class="img-ph-label" style="font-size:8px">Garden</div>
+                </div>
+              </div>
+              <div>
+                <span class="cat-tag">✦ Garden</span>
+                <h4>An English Rose Garden for the Modern Age</h4>
+                <p>Heritage varieties and their forgotten scents…</p>
+              </div>
+            </div>
+
+            <div class="lifestyle-mini">
+              <div class="lifestyle-mini-img">
+                <div class="img-ph img-ph-3" style="height:70px">
+                  <div class="img-ph-label" style="font-size:8px">Beauty</div>
+                </div>
+              </div>
+              <div>
+                <span class="cat-tag">✦ Beauty</span>
+                <h4>The Vanity Table: Ten Rituals Before Noon</h4>
+                <p>A morning ceremony in the tradition of French elegance…</p>
+              </div>
+            </div>
+
+            <div class="lifestyle-mini">
+              <div class="lifestyle-mini-img">
+                <div class="img-ph img-ph-4" style="height:70px">
+                  <div class="img-ph-label" style="font-size:8px">Food</div>
+                </div>
+              </div>
+              <div>
+                <span class="cat-tag">✦ Cuisine</span>
+                <h4>Recipes from the Provençal Countryside</h4>
+                <p>Lavender, thyme, and the forgotten art of slow cooking…</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- MOON PHASE -->
+      <div class="sidebar-widget">
+        <div class="widget-title">🌙 Moon Phase</div>
+        <div class="moon-display">
+          <span class="moon-symbol" id="moonSymbol">🌕</span>
+          <span class="moon-name" id="moonName">Full Moon</span>
+          <span class="moon-date" id="moonDate">April 14 · Libra</span>
+          <p class="moon-desc" id="moonDesc">A full moon in Libra brings matters of balance, beauty, and relationship into sharp relief. Light a white candle and speak your truth.</p>
+        </div>
+      </div>
+
+      <!-- TAROT -->
+      <div class="sidebar-widget">
+        <div class="widget-title">🃏 Daily Tarot Draw</div>
+        <div class="tarot-cards">
+          <div>
+            <div class="tarot-card" id="card1" onclick="revealCard('card1','card1name','🌙','The Moon')">
+              <div class="card-back">✦</div>
+              <span id="c1">🃏</span>
+            </div>
+            <div class="tarot-card-name" id="card1name">Past</div>
+          </div>
+          <div>
+            <div class="tarot-card" id="card2" onclick="revealCard('card2','card2name','☀️','The Sun')">
+              <div class="card-back">✦</div>
+              <span id="c2">🃏</span>
+            </div>
+            <div class="tarot-card-name" id="card2name">Present</div>
+          </div>
+          <div>
+            <div class="tarot-card" id="card3" onclick="revealCard('card3','card3name','⭐','The Star')">
+              <div class="card-back">✦</div>
+              <span id="c3">🃏</span>
+            </div>
+            <div class="tarot-card-name" id="card3name">Future</div>
+          </div>
+        </div>
+        <button class="tarot-btn" onclick="shuffleCards()">✦ Draw New Cards</button>
+      </div>
+
+      <!-- POPULAR -->
+      <div class="sidebar-widget">
+        <div class="widget-title">⭐ Most Read</div>
+        <div class="popular-list">
+          <div class="popular-item">
+            <span class="popular-num">01</span>
+            <span class="popular-title">The Ten Signs Your Birth Chart Is Trying to Tell You Something</span>
+          </div>
+          <div class="popular-item">
+            <span class="popular-num">02</span>
+            <span class="popular-title">Why the Women of Vienna Still Dress for Dinner</span>
+          </div>
+          <div class="popular-item">
+            <span class="popular-num">03</span>
+            <span class="popular-title">Ancient Remedies for the Modern Nervous System</span>
+          </div>
+          <div class="popular-item">
+            <span class="popular-num">04</span>
+            <span class="popular-title">The Art of Reading Tea Leaves: A Beginner's Introduction</span>
+          </div>
+          <div class="popular-item">
+            <span class="popular-num">05</span>
+            <span class="popular-title">Pilgrimage to the Healing Springs of Bath</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AD SPACE -->
+      <div class="ad-space">
+        <span>Advertisement</span>
+        <p style="margin-top:8px; font-family:'Playfair Display',serif; font-size:16px; color:var(--wine); font-style:italic;">"Chanel No. 5 —<br>The Scent of a Woman"</p>
+        <p style="font-family:'Special Elite',monospace; font-size:10px; color:var(--muted); letter-spacing:2px; margin-top:6px;">Available at fine perfumers</p>
+      </div>
+
+      <!-- EVENTS -->
+      <div class="sidebar-widget">
+        <div class="widget-title">📅 Upcoming Events</div>
+        <div class="event-item">
+          <div class="event-date">
+            <span class="event-day">19</span>
+            <span class="event-month">Apr</span>
+          </div>
+          <div class="event-info">
+            <h4>New Moon Ceremony</h4>
+            <p>Virtual Gathering · 8 PM</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date">
+            <span class="event-day">22</span>
+            <span class="event-month">Apr</span>
+          </div>
+          <div class="event-info">
+            <h4>Spring Equinox Talk</h4>
+            <p>The Connaught, London</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date">
+            <span class="event-day">28</span>
+            <span class="event-month">Apr</span>
+          </div>
+          <div class="event-info">
+            <h4>Crystal Healing Workshop</h4>
+            <p>The Ritz, Paris · By Invitation</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAGS -->
+      <div class="sidebar-widget">
+        <div class="widget-title">🏷 Browse Topics</div>
+        <div>
+          <a class="tag" href="#">Astrology</a>
+          <a class="tag" href="#">Moon Phases</a>
+          <a class="tag" href="#">Fiction</a>
+          <a class="tag" href="#">Spirituality</a>
+          <a class="tag" href="#">Style</a>
+          <a class="tag" href="#">Tarot</a>
+          <a class="tag" href="#">Meditation</a>
+          <a class="tag" href="#">Travel</a>
+          <a class="tag" href="#">Society</a>
+          <a class="tag" href="#">Recipes</a>
+          <a class="tag" href="#">Crystals</a>
+          <a class="tag" href="#">Numerology</a>
+          <a class="tag" href="#">Dreams</a>
+          <a class="tag" href="#">Ritual</a>
+          <a class="tag" href="#">Vintage</a>
+        </div>
+      </div>
+
+    </aside>
   </div>
-
-  <!-- SECTIONS -->
-  <h2 class="section-title">EXPLORE CATEGORIES</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>Stories</h3>
-      <p>Vintage-inspired storytelling from timeless eras.</p>
-    </div>
-
-    <div class="card">
-      <h3>Lifestyle</h3>
-      <p>Fashion, habits, and culture of retro living.</p>
-    </div>
-
-    <div class="card">
-      <h3>Astrology</h3>
-      <p>Zodiac insights in vintage magazine style.</p>
-    </div>
-
-    <div class="card">
-      <h3>Spiritual</h3>
-      <p>Calm reflections and meaningful life philosophy.</p>
-    </div>
-
-    <div class="card">
-      <h3>News</h3>
-      <p>Historical-style cultural storytelling and events.</p>
-    </div>
-
-  </div>
-
 </div>
+
+<!-- ASTROLOGY SECTION (FULL WIDTH) -->
+<section class="astrology-section" id="astrology">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">✦ Section Four</span>
+      <h2>The Celestial Almanac</h2>
+      <div class="section-rule">⬥</div>
+    </div>
+
+    <div class="zodiac-grid">
+      <div class="zodiac-card" onclick="openHoroscope('aries')">
+        <span class="zodiac-symbol">♈</span>
+        <span class="zodiac-name">Aries</span>
+        <span class="zodiac-dates">Mar 21 – Apr 19</span>
+      </div>
+      <div class="zodiac-card" onclick="openHoroscope('taurus')">
+        <span class="zodiac-symbol">♉</span>
+        <span class="zodiac-name">Taurus</span>
+        <span class="zodiac-dates">Apr 20 – May 20</span>
+      </div>
+      <div class="zodiac-card" onclick="openHoroscope('gemini')">
+        <span class="zodiac-symbol">♊</span>
+        <span class="zodiac-name">Gemini</span>
+        <span class="zodiac-dates">May 21 – Jun 20</span>
+      </div>
+      <div class="zodiac-card" onclick="openHoroscope('cancer')">
+        <span class="zodiac-symbol">♋</span>
+        <span class="zodiac-name">Cancer</span>
+        <span class="zodiac-dates">Jun 21 – Jul 22</span>
+      </div>
+      <div class="zodiac-card" onclick="openHoroscope('leo')">
+        <span class="zodiac-symbol">♌</span>
+        <span class="zodiac-name">Leo</span>
+        <span class="zodiac-dates">Jul 23 – Aug 22</span>
+      </div>
+      <div class="zodiac-card" onclick="openHoroscope('virgo')">
+        <span class="zodiac-symbol">♍</span>
+        <span class="zodiac-name">Virgo</span>
+        <span class="zodiac-dates">Aug 23 – Sep 22</span>
+      </div>
+      <div class="zodiac-card" onclick="openHoroscope('libra')">
+        <span class="zodiac-symbol">♎</span>
+        <span class="zodiac-name">Libra</span>
+        <span class="zodiac-dates">Sep 23 – Oct 22</span>
+      </div>
+      <div class="zodiac-card" onclick="openHoroscope('scorpio')">
+        <span class="zodiac-symbol">♏</span>
+        <span class="zodiac-name">Scorpio</span>
+        <span class="zodiac-dates">Oct 23 – Nov 21</span>
+      </div>
+      <div class="zodiac-card" onclick="openHoroscope('sagittarius')">
+        <span class="zodiac-symbol">♐</span>
+        <span class="zodiac-name">Sagittarius</span>
+        <span class="zodiac-dates">Nov 22 – Dec 21</span>
+      </div>
+      <div class="zodiac-card" onclick="openHoroscope('capricorn')">
+        <span class="zodiac-symbol">♑</span>
+        <span class="zodiac-name">Capricorn</span>
+        <span class="zodiac-dates">Dec 22 – Jan 19</span>
+      </div>
+      <div class="zodiac-card" onclick="openHoroscope('aquarius')">
+        <span class="zodiac-symbol">♒</span>
+        <span class="zodiac-name">Aquarius</span>
+        <span class="zodiac-dates">Jan 20 – Feb 18</span>
+      </div>
+      <div class="zodiac-card" onclick="openHoroscope('pisces')">
+        <span class="zodiac-symbol">♓</span>
+        <span class="zodiac-name">Pisces</span>
+        <span class="zodiac-dates">Feb 19 – Mar 20</span>
+      </div>
+    </div>
+
+    <div class="horoscope-preview">
+      <div class="horoscope-big-sign">
+        <span class="big-symbol">♈</span>
+        <span>Aries</span>
+      </div>
+      <div class="horoscope-text">
+        <h3>This Week for Aries</h3>
+        <p>Mars, your ruling planet, ignites in the third house of communication — a week of electric conversations, startling revelations, and the sudden arrival of long-awaited news. Speak with intention. Your words carry unusual power. A meeting on Thursday will prove more consequential than it first appears. Click any sign above for your full reading.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPIRITUAL SECTION -->
+<section class="spiritual-section" id="spiritual">
+  <div class="container" style="padding:0">
+    <div class="section-header" style="padding-top:0">
+      <span class="section-label">✦ Section Six</span>
+      <h2>The Inner World</h2>
+      <div class="section-rule">⬥</div>
+    </div>
+
+    <div class="spiritual-grid">
+      <div class="spiritual-card">
+        <span class="spiritual-icon">🕯</span>
+        <h3>The Ritual of Evening Reflection</h3>
+        <p>Before the world grew loud, women kept the practice of the evening review — a quiet accounting of the soul, conducted by candlelight, without judgment. We revive this forgotten art for the modern woman who longs for stillness in a restless world.</p>
+        <br><a href="#" class="read-more">Begin the Practice</a>
+      </div>
+
+      <div class="spiritual-card">
+        <span class="spiritual-icon">🔮</span>
+        <h3>Crystal Correspondences for Each Month</h3>
+        <p>The mineral kingdom holds a language older than speech. Each stone carries a frequency, a memory, a particular medicine. April belongs to the diamond and the clear quartz — stones of clarity, amplification, and the courage to see things as they truly are.</p>
+        <br><a href="#" class="read-more">Read the Almanac</a>
+      </div>
+
+      <div class="spiritual-card">
+        <span class="spiritual-icon">🌿</span>
+        <h3>Herbalism &amp; the Wise Woman Tradition</h3>
+        <p>Long before the pharmaceutical age, women were the primary healers of their communities — keepers of an intricate botanical knowledge passed in whispers between generations. This column returns to those roots, examining the plants that have healed for millennia.</p>
+        <br><a href="#" class="read-more">Enter the Garden</a>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- FEATURED SPIRITUAL -->
+    <div class="featured-wide">
+      <div class="featured-img">
+        <div class="img-ph img-ph-7" style="height:280px">
+          <div class="img-ph-label">Meditation & Ritual</div>
+        </div>
+      </div>
+      <div>
+        <span class="cat-tag" style="display:block;margin-bottom:10px">✦ Deep Dive</span>
+        <h2>The Seven Sacred Fires: An Ancient Meditation for Modern Times</h2>
+        <p>Across cultures, across centuries, fire has been the medium through which human beings have communicated with something greater than themselves. The Zoroastrian sacred flame, the Vestal fires of Rome, the candles of Catholic altars — each embodies the same ancient intuition: that light and consciousness are the same substance.</p>
+        <p>This month's meditation practice draws on three traditions, simplified for those who have never lit a ritual candle in their lives — and will transform those who have.</p>
+        <br>
+        <a href="#" class="read-more">Read the Full Meditation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div style="position:relative; z-index:1;">
+    <div class="ornament" style="color:rgba(196,164,90,0.4); margin-bottom:20px;">⬥ ◈ ⬥</div>
+    <h2>Join the Inner Circle</h2>
+    <p>Weekly readings, rare stories, celestial forecasts, and the wisdom of quiet seasons — delivered to your door.</p>
+    <div class="newsletter-form">
+      <input type="email" id="emailInput" placeholder="Your correspondence address…">
+      <button onclick="subscribeNewsletter()">Subscribe</button>
+    </div>
+    <p id="subMsg" style="color:rgba(196,164,90,0.8); font-size:13px; margin-top:10px; font-style:italic; display:none;">✦ Welcome to the circle. Your first issue arrives soon.</p>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-  © 2026 The 1950s Chronicle • Luxury Retro Magazine
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h2>VELVET ERA</h2>
+      <p>A publication devoted to the arts of living well, the mysteries of the celestial world, and the stories that remind us what it means to be human. Since 1947.</p>
+      <div class="footer-social">
+        <a class="social-btn" href="#">Twitter</a>
+        <a class="social-btn" href="#">Instagram</a>
+        <a class="social-btn" href="#">Pinterest</a>
+        <a class="social-btn" href="#">RSS</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Sections</h3>
+      <ul>
+        <li><a href="#">Cover Stories</a></li>
+        <li><a href="#">Fiction & Tales</a></li>
+        <li><a href="#">News & Society</a></li>
+        <li><a href="#">Astrology</a></li>
+        <li><a href="#">Spiritual</a></li>
+        <li><a href="#">Life & Style</a></li>
+        <li><a href="#">Travel</a></li>
+        <li><a href="#">Culture</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Celestial</h3>
+      <ul>
+        <li><a href="#">This Month's Chart</a></li>
+        <li><a href="#">Horoscopes</a></li>
+        <li><a href="#">Moon Calendar</a></li>
+        <li><a href="#">Tarot Reading</a></li>
+        <li><a href="#">Numerology</a></li>
+        <li><a href="#">Crystal Guide</a></li>
+        <li><a href="#">Dream Journal</a></li>
+        <li><a href="#">Ritual Library</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>The Magazine</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Writers</a></li>
+        <li><a href="#">Print Edition</a></li>
+        <li><a href="#">Advertise</a></li>
+        <li><a href="#">Submit a Story</a></li>
+        <li><a href="#">The Boutique</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 1947–2024 VELVET ERA PUBLICATIONS · ALL RIGHTS RESERVED</p>
+    <p>⬥ A MAGAZINE FOR THE WOMAN WHO READS BETWEEN THE LINES ⬥</p>
+    <p>PRINTED ON RECYCLED PARCHMENT · EST. MCMXLVII</p>
+  </div>
 </footer>
+
+<!-- HOROSCOPE MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal" id="modalContent">
+    <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">✕</button>
+    <span class="modal-sign" id="modalSign">♈</span>
+    <h2 id="modalTitle">Aries</h2>
+    <span class="modal-dates" id="modalDates">March 21 – April 19</span>
+    <div class="horoscope-body" id="modalBody"></div>
+    <div class="horoscope-lucky">
+      <div class="lucky-item">
+        <span class="lucky-label">Lucky Day</span>
+        <span class="lucky-value" id="luckyDay">Tuesday</span>
+      </div>
+      <div class="lucky-item">
+        <span class="lucky-label">Lucky Number</span>
+        <span class="lucky-value" id="luckyNum">7</span>
+      </div>
+      <div class="lucky-item">
+        <span class="lucky-label">Lucky Stone</span>
+        <span class="lucky-value" id="luckyStone">Ruby</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const horoscopes = {
+  aries: {
+    symbol: '♈', name: 'Aries', dates: 'March 21 – April 19',
+    reading: ['Mars, your ruling planet, blazes through the third house of communication this week, electrifying every conversation and sharpening your already formidable instincts. You are, in the language of the ancients, a fire letter — burning with purpose, searching for kindling.', 'A long-awaited conversation will arrive, perhaps through an unexpected channel — a handwritten note, a telephone call at an improbable hour, a chance encounter in a place you were not planning to visit. Do not dismiss coincidence this week. The universe has arranged this meeting.', 'Financially, Jupiter\'s gentle aspect suggests a minor windfall or the resolution of a debt long outstanding. In love, the full moon illuminates what has been left unsaid — summon your courage and speak it.'],
+    day: 'Tuesday', num: '9', stone: 'Carnelian'
+  },
+  taurus: {
+    symbol: '♉', name: 'Taurus', dates: 'April 20 – May 20',
+    reading: ['Venus, your ruling planet, lingers in her own sign — a position of quiet, extraordinary power. This is a week for beauty, for sensory delight, for the refinement of everything you touch. You are at your most magnetic, and those around you feel it even when you do not.', 'A financial opportunity presents itself in the most unlikely of guises. Do not dismiss what appears trivial. The seed of a significant harvest is being planted this week, and Taurus, more than any other sign, knows how to be patient with seeds.', 'In love, your partner — or a potential partner — sees something in you that you have not yet acknowledged in yourself. Allow yourself to be seen.'],
+    day: 'Friday', num: '6', stone: 'Rose Quartz'
+  },
+  gemini: {
+    symbol: '♊', name: 'Gemini', dates: 'May 21 – June 20',
+    reading: ['Mercury, your swift and silver ruler, turns direct this week after its retrograde sojourn through Aries — and the doors that have seemed sealed for three weeks begin, finally, to open. You will feel the change as a shift in atmospheric pressure, as a sudden intake of breath.', 'Two paths present themselves with equal urgency. Your instinct will be to take both simultaneously — resist this impulse. Choose one road and walk it completely. You will find that the other path was merely a reflection of the first.', 'An old friendship revives with surprising warmth. Say yes to the invitation.'],
+    day: 'Wednesday', num: '3', stone: 'Aquamarine'
+  },
+  cancer: {
+    symbol: '♋', name: 'Cancer', dates: 'June 21 – July 22',
+    reading: ['The full moon in your sister water sign of Pisces illuminates the twelfth house of your chart — the house of dreams, of dissolution, of the sacred retreat. This is a week for going inward with purpose, for reviewing what you have been carrying and asking whether it still belongs to you.', 'A family matter that has been simmering reaches its resolution. Approach it with compassion rather than argument. You know, already, what the right answer is — trust that knowing.', 'Your home beckons. A renovation, a rearrangement, or simply a deep and thorough cleaning will release stagnant energy and open new possibilities.'],
+    day: 'Monday', num: '2', stone: 'Moonstone'
+  },
+  leo: {
+    symbol: '♌', name: 'Leo', dates: 'July 23 – August 22',
+    reading: ['The sun, your sovereign ruler, moves through the ninth house of philosophy and long journeys — and Leo, the most royal of the signs, is being called toward the horizon. This may be a literal journey, or it may be the metaphorical voyage of reading a book that changes everything.', 'Your creativity, which has been quietly gathering force like water behind a dam, finds its proper outlet this week. Do not wait for permission. Begin the project. Write the first sentence. Mix the first colour. The muse responds to motion.', 'In professional matters, your instinct to lead is sound. Trust it. Others are waiting for you to set the direction.'],
+    day: 'Sunday', num: '1', stone: 'Tiger\'s Eye'
+  },
+  virgo: {
+    symbol: '♍', name: 'Virgo', dates: 'August 23 – September 22',
+    reading: ['Mercury, your ruling planet, direct in Aries, sparks the eighth house of transformation and hidden resources. What has been buried comes to light. What was lost is, astonishingly, found. Virgo\'s gift for analysis has never been more valuable than this week.', 'A health matter that has caused quiet concern resolves itself through the simplest of measures — rest, water, sunlight, and the willingness to slow down. Your body has been asking for permission to heal. Grant it.', 'A detailed project at work reaches its critical phase. Your extraordinary attention to detail will not go unnoticed or unrewarded. Someone in a position of authority is paying attention.'],
+    day: 'Thursday', num: '5', stone: 'Jade'
+  },
+  libra: {
+    symbol: '♎', name: 'Libra', dates: 'September 23 – October 22',
+    reading: ['Venus-ruled Libra is at the axis of this week\'s full moon — the moon is in your sign, and the sky is, quite literally, organised around you. Relationships of every variety come under sharp, beautiful focus. The question this week is: are you choosing yourself as fiercely as you choose others?', 'An aesthetic decision — decoration, clothing, creative direction — that you have been deferring is ready to be made. Trust your eye. You were born with it.', 'A professional partnership offers more than it initially appears. Look more carefully at the terms. What seems like a constraint is, in fact, a structure of protection.'],
+    day: 'Friday', num: '6', stone: 'Opal'
+  },
+  scorpio: {
+    symbol: '♏', name: 'Scorpio', dates: 'October 23 – November 21',
+    reading: ['Pluto, your outer ruler, continues its slow and inexorable journey through Aquarius — transforming your fourth house of home, ancestry, and foundations. Scorpio has always understood that the most important transformations happen below the surface, invisibly, until they are complete.', 'A secret that has been kept, perhaps not even by you, comes partially to light. How you handle this disclosure will define a relationship for years to come. Choose truth over self-protection.', 'Financially, a bold intuition about an investment or resource should be acted upon — but after careful research. Your instincts are rarely wrong when you have also done the work.'],
+    day: 'Tuesday', num: '8', stone: 'Obsidian'
+  },
+  sagittarius: {
+    symbol: '♐', name: 'Sagittarius', dates: 'November 22 – December 21',
+    reading: ['Jupiter, your generous and expansive ruler, turns its bright face toward the fifth house of creativity, romance, and pure joy. Sagittarius — the archer, the philosopher, the perennial traveller — is being invited to play. To delight, without agenda.', 'A romantic development arrives with the speed and surprise that Sagittarius has always preferred. Do not overthink. Your heart is calibrated for adventure, and adventure requires the willingness to begin.', 'A teaching or publishing opportunity deserves your serious consideration. You have more to say than you have been saying. Find the larger platform.'],
+    day: 'Thursday', num: '3', stone: 'Turquoise'
+  },
+  capricorn: {
+    symbol: '♑', name: 'Capricorn', dates: 'December 22 – January 19',
+    reading: ['Saturn, your ancient and faithful ruler, aspects the full moon with characteristic seriousness. Capricorn is being asked to assess, to audit, to look clearly at what has been built and determine what requires reinforcement. This is not a week for sentiment — it is a week for architecture.', 'A long-term goal that has seemed distant reveals itself to be considerably closer than you thought. The progress you have made, which you have a tendency to discount, is both real and remarkable.', 'Allow yourself a moment of genuine rest before the next ascent begins. Even the most disciplined climbers know the necessity of the base camp.'],
+    day: 'Saturday', num: '4', stone: 'Onyx'
+  },
+  aquarius: {
+    symbol: '♒', name: 'Aquarius', dates: 'January 20 – February 18',
+    reading: ['Uranus, your electric and unpredictable ruler, sparks the third house of communication — expect the unexpected in correspondence, conversation, and the flow of information. For Aquarius, the sign that has always lived three decades ahead of its time, this disruption carries the familiar charge of home.', 'A collective project, a community endeavour, or a group with a shared vision invites your participation. Your contribution is specific and irreplaceable. They need the particular thing that only you can offer.', 'In personal matters, the unusual person is the right person. Trust your unconventional instincts about who belongs in your life.'],
+    day: 'Saturday', num: '11', stone: 'Amethyst'
+  },
+  pisces: {
+    symbol: '♓', name: 'Pisces', dates: 'February 19 – March 20',
+    reading: ['Neptune, your transcendent ruler, dissolves boundaries in the most useful possible way this week — allowing Pisces to feel their way through situations that would confound more rational signs. Your intuition is, this week, your most valuable intelligence. Trust the feeling before the logic has caught up.', 'A creative project that has been gestating for longer than seems reasonable is ready to be born. Perfectionism is the thing keeping it from the world. Imperfect and present is worth more than perfect and never.', 'Dreams this week will carry unusual significance. Keep a journal beside the bed. The images that arrive at the border of sleep are messages worth decoding.'],
+    day: 'Monday', num: '7', stone: 'Aquamarine'
+  }
+};
+
+const tarotDeck = [
+  {emoji:'🌙',name:'The Moon'},{emoji:'☀️',name:'The Sun'},
+  {emoji:'⭐',name:'The Star'},{emoji:'🌟',name:'Judgment'},
+  {emoji:'🔮',name:'High Priestess'},{emoji:'⚡',name:'The Tower'},
+  {emoji:'🌈',name:'The World'},{emoji:'💫',name:'The Magician'},
+  {emoji:'🕊',name:'The Fool'},{emoji:'⚖️',name:'Justice'},
+  {emoji:'🌿',name:'The Empress'},{emoji:'🦁',name:'Strength'},
+  {emoji:'🏆',name:'Wheel of Fortune'},{emoji:'🌊',name:'The Hanged Man'},
+  {emoji:'💀',name:'Death'},{emoji:'🔥',name:'The Devil'}
+];
+
+function openHoroscope(sign) {
+  const h = horoscopes[sign];
+  document.getElementById('modalSign').textContent = h.symbol;
+  document.getElementById('modalTitle').textContent = h.name;
+  document.getElementById('modalDates').textContent = h.dates;
+  document.getElementById('luckyDay').textContent = h.day;
+  document.getElementById('luckyNum').textContent = h.num;
+  document.getElementById('luckyStone').textContent = h.stone;
+  document.getElementById('modalBody').innerHTML = h.reading.map(p => `<p>${p}</p>`).join('');
+  document.getElementById('modal').classList.add('open');
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modal')) {
+    document.getElementById('modal').classList.remove('open');
+  }
+}
+
+let cardData = [{emoji:'🌙',name:'The Moon'},{emoji:'☀️',name:'The Sun'},{emoji:'⭐',name:'The Star'}];
+
+function revealCard(cardId, nameId, emoji, name) {
+  const card = document.getElementById(cardId);
+  card.classList.add('revealed');
+  const idx = parseInt(cardId.replace('card','')) - 1;
+  card.querySelector('span').textContent = cardData[idx].emoji;
+  const nameEl = document.getElementById(nameId);
+  const positions = ['Past','Present','Future'];
+  nameEl.textContent = cardData[idx].name;
+}
+
+function shuffleCards() {
+  ['card1','card2','card3'].forEach(id => {
+    document.getElementById(id).classList.remove('revealed');
+  });
+  const shuffled = [...tarotDeck].sort(() => Math.random() - 0.5);
+  cardData = shuffled.slice(0, 3);
+  setTimeout(() => {
+    document.getElementById('c1').textContent = '🃏';
+    document.getElementById('c2').textContent = '🃏';
+    document.getElementById('c3').textContent = '🃏';
+    document.getElementById('card1name').textContent = 'Past';
+    document.getElementById('card2name').textContent = 'Present';
+    document.getElementById('card3name').textContent = 'Future';
+  }, 50);
+}
+
+function subscribeNewsletter() {
+  const email = document.getElementById('emailInput').value;
+  if (email && email.includes('@')) {
+    document.getElementById('subMsg').style.display = 'block';
+    document.getElementById('emailInput').value = '';
+  } else {
+    document.getElementById('emailInput').style.borderColor = '#C1440E';
+    setTimeout(() => document.getElementById('emailInput').style.borderColor = '', 2000);
+  }
+}
+
+function handleSearch() {
+  const q = document.getElementById('searchInput').value;
+  if (q.trim()) {
+    alert(`Searching the Velvet Era archives for: "${q}"\n\n(In a live site, this would open the search results page.)`);
+  }
+}
+
+// Moon phase cycling
+const moons = [
+  {s:'🌑',n:'New Moon',d:'The new moon is a time of beginnings — set intentions, plant seeds, begin new endeavours with quiet purpose.'},
+  {s:'🌒',n:'Waxing Crescent',d:'Energy builds gently. Tend to your intentions as a gardener tends seedlings — with daily attention and patience.'},
+  {s:'🌓',n:'First Quarter',d:'Decisions and challenges arise. Act with decisiveness. The quarter moon rewards those who commit to their path.'},
+  {s:'🌔',n:'Waxing Gibbous',d:'Refinement is the art of this phase. Review your work. Polish what needs polishing. The harvest approaches.'},
+  {s:'🌕',n:'Full Moon',d:'A full moon in Libra brings matters of balance and relationship into sharp relief. Light a white candle and speak your truth.'},
+  {s:'🌖',n:'Waning Gibbous',d:'Share your gains with others. The waning gibbous teaches gratitude, generosity, and the art of the graceful release.'},
+  {s:'🌗',n:'Last Quarter',d:'Release what no longer serves you. This is the moon of forgiveness — of self and others. Let go with grace.'},
+  {s:'🌘',n:'Waning Crescent',d:'Retreat, rest, and restore. The waning crescent asks for surrender — the deepest wisdom is in the willingness to rest.'}
+];
+
+let moonIdx = 4;
+document.getElementById('moonSymbol').textContent = moons[moonIdx].s;
+
+document.getElementById('moonSymbol').addEventListener('click', () => {
+  moonIdx = (moonIdx + 1) % moons.length;
+  document.getElementById('moonSymbol').textContent = moons[moonIdx].s;
+  document.getElementById('moonName').textContent = moons[moonIdx].n;
+  document.getElementById('moonDesc').textContent = moons[moonIdx].d;
+});
+</script>
 
 </body>
 </html>
