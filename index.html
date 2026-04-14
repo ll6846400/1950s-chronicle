@@ -15,11 +15,12 @@
     nav {
       text-align: center;
       padding: 18px;
-      background: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.85);
       position: sticky;
       top: 0;
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #ddd;
+      z-index: 10;
     }
 
     nav a {
@@ -30,10 +31,11 @@
       letter-spacing: 1px;
     }
 
-    /* HERO */
+    /* HERO FULL SCREEN */
     .hero {
-      height: 95vh;
-      background-image: url("https://images.unsplash.com/photo-1520975682031-a0f60a6c0f1c?auto=format&fit=crop&w=1600&q=80");
+      height: 100vh;
+      width: 100%;
+      background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80");
       background-size: cover;
       background-position: center;
       position: relative;
@@ -43,23 +45,30 @@
       text-align: center;
     }
 
+    /* LUXURY OVERLAY */
     .overlay {
       position: absolute;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+      background: linear-gradient(
+        rgba(20, 15, 10, 0.65),
+        rgba(90, 70, 40, 0.55)
+      );
     }
 
+    /* HERO TEXT */
     .hero-content {
       position: relative;
       color: white;
       max-width: 800px;
+      padding: 20px;
+      text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
     }
 
     .hero-content h1 {
-      font-size: 72px;
+      font-size: 80px;
       margin: 0;
-      letter-spacing: 4px;
+      letter-spacing: 5px;
     }
 
     .hero-content p {
@@ -68,7 +77,7 @@
       margin-top: 10px;
     }
 
-    /* SECTION */
+    /* CONTENT */
     .container {
       max-width: 1100px;
       margin: auto;
@@ -82,7 +91,7 @@
       margin-bottom: 40px;
     }
 
-    /* FEATURE GRID */
+    /* GRID */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -94,18 +103,14 @@
       padding: 25px;
       border-left: 5px solid #c9a66b;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
+      transition: 0.3s;
     }
 
     .card:hover {
       transform: translateY(-5px);
     }
 
-    .card h3 {
-      margin-top: 0;
-    }
-
-    /* FEATURED STORY */
+    /* FEATURED */
     .featured {
       background: white;
       padding: 30px;
@@ -121,6 +126,7 @@
       margin-top: 60px;
       font-size: 14px;
     }
+
   </style>
 </head>
 
@@ -142,7 +148,11 @@
 
   <div class="hero-content">
     <h1>The 1950s Chronicle</h1>
-    <p>A Luxury Vintage Magazine • Stories, Culture, Lifestyle & Timeless Living</p>
+    <p>Luxury Vintage Magazine • Stories • Lifestyle • Culture • Astrology</p>
+
+    <div style="margin-top:20px;font-size:16px;color:#f5e6c8;">
+      ✨ A timeless journey through elegance, storytelling, and vintage culture
+    </div>
   </div>
 </div>
 
@@ -152,39 +162,39 @@
   <h2 class="section-title">EDITOR’S INTRODUCTION</h2>
 
   <p style="text-align:center;line-height:1.8;max-width:800px;margin:auto;">
-    The 1950s Chronicle is a luxury retro-inspired digital magazine exploring timeless storytelling, 
-    vintage lifestyle, cultural history, astrology, and spiritual reflections. Designed with an editorial 
-    aesthetic, it brings the elegance of old magazine publishing into the modern digital world.
+    The 1950s Chronicle is a luxury retro-inspired digital magazine featuring vintage lifestyle,
+    storytelling, culture, astrology, and spiritual reflections. It is designed as a modern
+    editorial experience inspired by timeless eras.
   </p>
 
-  <!-- FEATURED STORY -->
+  <!-- FEATURED -->
   <div class="featured">
     <h2>FEATURED STORY</h2>
     <h3>The Golden Era of Simplicity</h3>
     <p>
-      A deep look into how life, culture, and daily routines were shaped in a slower, more meaningful time.
-      Discover the beauty of minimalism before modern technology.
+      Explore a world where life moved slower, emotions were deeper, and simplicity defined beauty.
+      A reflection on timeless living and cultural elegance.
     </p>
   </div>
 
   <!-- SECTIONS -->
-  <h2 class="section-title">EXPLORE THE MAGAZINE</h2>
+  <h2 class="section-title">EXPLORE CATEGORIES</h2>
 
   <div class="grid">
 
     <div class="card">
       <h3>Stories</h3>
-      <p>Vintage-inspired storytelling from a timeless world.</p>
+      <p>Vintage-inspired storytelling from timeless eras.</p>
     </div>
 
     <div class="card">
       <h3>Lifestyle</h3>
-      <p>Fashion, habits, and daily life from retro culture.</p>
+      <p>Fashion, habits, and culture of retro living.</p>
     </div>
 
     <div class="card">
       <h3>Astrology</h3>
-      <p>Elegant zodiac insights and symbolic interpretations.</p>
+      <p>Symbolic zodiac insights in vintage magazine style.</p>
     </div>
 
     <div class="card">
@@ -203,7 +213,7 @@
 
 <!-- FOOTER -->
 <footer>
-  © 2026 The 1950s Chronicle • Luxury Vintage Digital Magazine
+  © 2026 The 1950s Chronicle • Luxury Retro Magazine
 </footer>
 
 </body>
