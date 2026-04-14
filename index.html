@@ -2,70 +2,132 @@
 <html>
 <head>
   <title>The 1950s Chronicle</title>
+
   <style>
     body {
-      font-family: Georgia, serif;
-      background-color: #f5f1e8;
-      color: #2b2b2b;
       margin: 0;
-      padding: 0;
+      font-family: Georgia, serif;
+      background: #f7f1e3;
+      color: #2b2b2b;
     }
 
-    header {
+    /* COVER SECTION */
+    .cover {
+      position: relative;
+      height: 100vh;
+      background-image: url("https://images.unsplash.com/photo-1520975682031-a0f60a6c0f1c?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 40px 20px;
-      border-bottom: 2px solid #333;
+    }
+
+    /* DARK OVERLAY */
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.45);
+    }
+
+    /* TITLE */
+    .title-box {
+      position: relative;
+      z-index: 2;
+      color: #fff;
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 70px;
       margin: 0;
-      letter-spacing: 2px;
+      letter-spacing: 4px;
     }
 
     .subtitle {
       font-style: italic;
+      font-size: 20px;
       margin-top: 10px;
+      color: #f5e6c8;
     }
 
-    .container {
-      max-width: 800px;
+    /* CONTENT */
+    .content {
+      max-width: 900px;
       margin: auto;
-      padding: 30px;
+      padding: 50px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
     }
 
     .article {
       background: #fff;
-      padding: 20px;
-      margin-top: 20px;
-      border-left: 5px solid #333;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-left: 6px solid #c9a66b;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     .article h2 {
       margin-top: 0;
     }
+
+    /* IMAGE BLOCK */
+    .retro-image {
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>The 1950s Chronicle</h1>
-  <div class="subtitle">Stories from a golden era</div>
-</header>
+  <!-- COVER -->
+  <div class="cover">
+    <div class="overlay"></div>
 
-<div class="container">
-
-  <div class="article">
-    <h2>A Day in 1950: Life Before Screens</h2>
-    <p>
-      In 1950, mornings began with the sound of radios instead of alarms on phones.
-      Newspapers were the main source of news, and families gathered around breakfast tables
-      without digital distractions...
-    </p>
+    <div class="title-box">
+      <h1>The 1950s Chronicle</h1>
+      <div class="subtitle">Old Hollywood Stories • Audrey Hepburn Era • Vintage Lifestyle</div>
+    </div>
   </div>
 
-</div>
+  <!-- CONTENT -->
+  <div class="content">
+
+    <div class="section-title">Featured Story</div>
+
+    <div class="article">
+      <h2>Audrey Era Morning: A Life of Elegance</h2>
+
+      <p>
+        In the golden age of Hollywood, mornings began with soft sunlight,
+        elegant fashion, handwritten letters, and the quiet charm of a slower world.
+        Audrey Hepburn’s era defined grace, simplicity, and timeless beauty...
+      </p>
+
+      <img class="retro-image"
+        src="https://images.unsplash.com/photo-1520975682031-a0f60a6c0f1c?auto=format&fit=crop&w=1200&q=80">
+
+    </div>
+
+    <div class="article">
+      <h2>The Style of 1950s Hollywood</h2>
+      <p>
+        Dresses were elegant, gloves were common, and every detail of fashion
+        carried a sense of luxury and refinement that defined the decade...
+      </p>
+    </div>
+
+  </div>
 
 </body>
 </html>
